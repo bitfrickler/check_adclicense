@@ -11,7 +11,7 @@ For details on how to format a Nagios-specific range, please refer to the [Nagio
 
 ## Usage
 
-```shell
+```cli
   -critical string
         The range for critical status. For specification please refer to the Nagios docs.
   -hostname string
@@ -33,12 +33,12 @@ For details on how to format a Nagios-specific range, please refer to the [Nagio
 Use HTTP instead of HTTPS to avoid problems with untrusted (i.e. self-signed) certificates.
 Specify a warning threshold for anything between 11 and 60 days (inclusive of endpoints). The threshold for a critical status is any value of 10 or less (inclusive of endpoints).
 
-```shell
+```cli
 check_adclicense.exe --hostname=adc_1 --username=nagios --password=nagios123 --secure=0 --warning=@11:60 --critical=@~:10
 ```
 
 Use the same example as before but do not actually access the ADC (parameters hostname, username, password and secure may just as well be omitted). The test value will be used instead.
 
-```shell
+```cli
 check_adclicense.exe --hostname=adc_1 --username=nagios --password=nagios123 --secure=0 --warning=@11:60 --critical=@~:10 --testvalue=9
 ```
