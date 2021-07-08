@@ -9,6 +9,8 @@ It uses the [Nitro API](https://docs.citrix.com/en-us/citrix-adc/current-release
 
 For details on how to format a Nagios-specific range, please refer to the [Nagios documentation](https://nagios-plugins.org/doc/guidelines.html#THRESHOLDFORMAT)
 
+This project uses the very cool [nagiosplugin](https://pkg.go.dev/github.com/olorin/nagiosplugin) for Go.
+
 ## Usage
 
 ```cli

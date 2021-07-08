@@ -5,8 +5,6 @@ import (
 	"flag"
 	"fmt"
 	"io/ioutil"
-	"log"
-	"math"
 	"net/http"
 	"os"
 	"strconv"
@@ -64,7 +62,7 @@ func main() {
 	check := nagiosplugin.NewCheck()
 	defer check.Finish()
 
-	check.AddPerfDatum("days_remaining", "", daysRemaining, 0.0, math.Inf(1), -60, -10)
+	//check.AddPerfDatum("days_remaining", "", daysRemaining, 0.0, math.Inf(1), -60, -10)
 
 	check.AddResult(nagiosplugin.OK, fmt.Sprintf("Your license will expire in %v", int(daysRemaining)))
 
@@ -86,7 +84,8 @@ func downloadJson(url, username, password string) string {
 
 	resp, err := client.Do(req)
 	if err != nil {
-		log.Fatalf("Could not download JSON from %s: %s", url, err)
+		fmt.Printf("Could not download JSON from %s: %s", url, err)
+		os.Exit(3)
 	}
 
 	defer resp.Body.Close()
