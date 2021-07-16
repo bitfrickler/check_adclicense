@@ -64,14 +64,14 @@ func main() {
 
 	//check.AddPerfDatum("days_remaining", "", daysRemaining, 0.0, math.Inf(1), -60, -10)
 
-	check.AddResult(nagiosplugin.OK, fmt.Sprintf("Your license will expire in %v", int(daysRemaining)))
+	check.AddResult(nagiosplugin.OK, fmt.Sprintf("Your license will expire in %v day(s)", daysRemaining))
 
 	if criticalRange.Check(daysRemaining) {
-		check.AddResult(nagiosplugin.CRITICAL, "Your license will expire in less than 10 days")
+		check.AddResult(nagiosplugin.CRITICAL, fmt.Sprintf("Your license will expire in less than %v days", criticalRange.End))
 	}
 
 	if warningRange.Check(daysRemaining) {
-		check.AddResult(nagiosplugin.WARNING, "Your license will expire in less than 60 days")
+		check.AddResult(nagiosplugin.WARNING, fmt.Sprintf("Your license will expire in less than %v days", warningRange.End))
 	}
 }
 
