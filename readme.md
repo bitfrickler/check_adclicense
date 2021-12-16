@@ -33,7 +33,7 @@ This project uses the very cool [nagiosplugin](https://pkg.go.dev/github.com/olo
 ## Precompiled executables
 
 The bin folder contains executables for AMD64 on Windows, Linux and Darwin (Mac OS).
-The Subfolder upx contains a lzma-compressed version using UPX. Please be aware that AV scanners might flag these as false positives. When in doubt, just use the non-UPX version or compress the file yourself:
+The subfolder upx contains a lzma-compressed version using UPX. Please be aware that AV scanners might flag these as false positives. When in doubt, just use the non-UPX version or compress the file yourself:
 
 ```cli
 GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o bin/linux-amd64/check_adclicense main.go
