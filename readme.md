@@ -1,7 +1,5 @@
 # check_adclicense
 
-## THIS IS STILL WORK IN PROGRESS
-
 ## Description
 
 check_adclicense is a Nagios check plugin to monitor the remaining days on your Citrix ADC license.
