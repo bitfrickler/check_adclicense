@@ -41,7 +41,7 @@ upx --lzma -o bin/linux-amd64/upx/check_adclicense bin/linux-amd64/check_adclice
 ## Examples
 
 Use HTTP instead of HTTPS to avoid problems with untrusted (i.e. self-signed) certificates.
-Specify a warning threshold for anything between 11 and 60 days (inclusive of endpoints). The threshold for a critical status is any value of 10 or less (inclusive of endpoints).
+Specify a warning threshold for anything from 11 to 60 days. The threshold for a critical status is any value of 10 or less (inclusive of endpoints).
 
 ```cli
 check_adclicense --hostname=adc_1 --username=nagios --password=nagios123 --secure=0 --warning=@11:60 --critical=@~:10
